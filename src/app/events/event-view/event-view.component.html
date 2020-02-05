@@ -1,0 +1,80 @@
+<div class="main" *ngIf="event$ | async as event">
+    <mat-card class="event-info"> 
+        <!-- <mat-icon class="well-icon">event</mat-icon>  -->
+        <mat-card-header>
+          <div mat-card-avatar class="event-header-image">
+            <img  mat-card-avatar [attr.src]= "getImageUrl(event) | ImgSecure | async"/>
+          </div>
+          <mat-card-title> {{event.name}}</mat-card-title>
+          <mat-card-subtitle>Scheduled On {{event.scheduledAt | date:'full'}}</mat-card-subtitle>
+          <mat-card-subtitle>Created On {{event.createdAt | date}}</mat-card-subtitle>
+        </mat-card-header>
+        <br>
+        <mat-card-title class="description"> Description</mat-card-title>
+        <mat-card-content>
+          <p>
+            {{event.description}}
+          </p>
+        </mat-card-content>
+    </mat-card>
+
+    <br>
+    <br>
+     <mat-accordion>
+       <mat-expansion-panel class="banner-view">
+         <mat-expansion-panel-header>
+           <mat-panel-title>
+             Event Banner
+           </mat-panel-title>
+         </mat-expansion-panel-header>
+         <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"> -->
+         <img mat-card-image [attr.src]= "getImageUrl(event) | ImgSecure | async">
+       </mat-expansion-panel>
+     </mat-accordion>
+
+     <br>
+     <br>
+
+     <mat-form-field class="table-search" color="accent">
+      <input matInput (keyup)="applyFilter($event.target.value, event)" placeholder="Search Guests" [formControl]="guestSearchControl">
+      <button mat-button *ngIf="guestSearchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="OnClearSearch()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div>
+      <table mat-table [dataSource]="dataSource" matSort  #content id="content" *ngIf="dataSource && dataSource.data.length">
+    
+        <!-- SL NO -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> #. </th>
+          <td mat-cell *matCellDef="let row;let i = index"> {{i + 1}} </td>
+        </ng-container>
+    
+        <!-- last name Column -->
+        <ng-container matColumnDef="last name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+        </ng-container>
+    
+        <!-- first Name Column -->
+        <ng-container matColumnDef="first name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+        </ng-container>
+        
+    
+        <!-- email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="OnRowSelect(row,event)">
+        </tr>
+      </table>
+    
+    </div>
+
+</div>

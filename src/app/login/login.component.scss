@@ -1,0 +1,117 @@
+// @mixin login-theme($theme) {
+
+//     $primary: map-get($theme, primary);
+//     $warn: map-get($theme, warn);
+//   }
+
+
+// .login-section{
+//     background: #18227c;
+//     width: 100%;
+//     height: 100%;
+//     margin: 0;
+// }
+
+// .login-section .container {
+//     width: 50%;
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+// }
+
+// .login-section .container .login-panel{
+//     text-align: center;
+//     // width: 50%;
+//     margin: auto;
+//     box-shadow: none;
+// }
+
+// .login-section .container .login-panel .login-form{
+//     .user-field{
+//         color: #babdd2;
+//         width: 100%;
+//         mat-icon{
+//             vertical-align: bottom;
+//         }
+//     }
+
+//     button{
+//         width: 100%;
+//         border-radius: 0;
+//         margin-top: 25px;
+//         letter-spacing: 0.1em;
+//         text-transform: uppercase;
+//     }
+// }
+
+
+.login-container {
+    background: #18227c;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .login-card{
+    background: inherit;
+    box-shadow: none;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .login-content {
+    // width: 400px;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .login-toolbar {
+    justify-content: center;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    display: block;
+  }
+  
+  .mat-raised-button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .user-field{
+    color: #babdd2;
+    mat-icon{
+         vertical-align: bottom;
+      }
+}
+
+button{
+            width: 100%;
+            border-radius: 0;
+            margin-top: 25px !important;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+ }
+
+ .login-title-logo{
+    // text-align: center;
+    width: 100%;
+    font-size: 80px;
+    position: relative;
+    .icon{
+        box-sizing: border-box;
+        font-size: 100px;
+        color: #babdd2;
+        margin-bottom: 10px;
+        left: 36%;
+        position: relative;
+    }
+}

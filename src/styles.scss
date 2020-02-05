@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$auth-primary: mat-palette($mat-grey, 50, 100);
+$auth-accent: mat-palette($mat-indigo, 800, 900);
+$auth-warn: mat-palette($mat-pink, 400, 500);
+$auth-theme: mat-dark-theme($auth-primary, $auth-accent, $auth-warn);
+
+@include mat-form-field-theme($auth-theme); // Form-Field theme
+@include mat-input-theme($auth-theme);      // Input Theme

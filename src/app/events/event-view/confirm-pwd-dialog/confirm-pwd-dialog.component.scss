@@ -1,0 +1,41 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+// .dialog-content {
+
+// }
+
+.dialog{
+  mat-toolbar-row{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+    background: black;
+  }
+  
+  ::ng-deep .mat-form-field-infix{
+    font-size: 14px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label{
+    color: black;
+  }
+
+  .mat-dialog-actions{
+    justify-content: center;
+  }
+}
+
+.dialog .dialog-content{
+  mat-form-field{
+    display: flex;
+  }
+}

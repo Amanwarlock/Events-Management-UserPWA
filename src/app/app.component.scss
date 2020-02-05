@@ -1,0 +1,22 @@
+.app-title{
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  mat-toolbar.mat-toolbar.mat-app-header.mat-toolbar-multiple-rows {
+      background: #00004f;
+      color: #ffffff;
+  }
+  
+  .app-header-icon {
+      padding: 0 14px;
+    }
+    
+    .app-header-spacer {
+      flex: 1 1 auto;
+    }
+    
+
+  .menu-icon{
+    margin-right: 10px;
+  }

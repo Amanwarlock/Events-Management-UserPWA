@@ -1,0 +1,34 @@
+<div  class="main" *ngIf="event$ | async as event">
+    <mat-card class="guest-info">
+        <mat-card-title class="guest-name"><mat-icon matPrefix>perm_identity</mat-icon>&nbsp;&nbsp;<span>{{guest.firstName}} {{guest.lastName}}</span></mat-card-title>
+        <mat-card-title class="guest-email"><mat-icon matPrefix>email</mat-icon>&nbsp;&nbsp;<span>{{guest.email}}</span></mat-card-title>
+    </mat-card>
+
+    <mat-card class="event-info">
+        <mat-card-header><mat-card-title>Event Details</mat-card-title> </mat-card-header>
+        <mat-card-title class="event-name"><mat-icon matPrefix>event_available</mat-icon>&nbsp;&nbsp;<span>{{event.name}}</span></mat-card-title>
+        <mat-card-subtitle class="event-schedule"><mat-icon matPrefix>schedule</mat-icon>&nbsp;&nbsp;<span>{{event.scheduledAt | date}}</span></mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="guest-signature">
+        <!-- <ng-signature-pad
+            doneButtonText="Show Image"
+            format="base64"
+            (done)="showImage($event)">
+        </ng-signature-pad>
+        <img [src]="signatureImage" *ngIf="signatureImage" /> -->
+        <mat-card-header><mat-card-subtitle>Sign Here</mat-card-subtitle> </mat-card-header>
+        <ng-signature-pad
+            doneButtonText="Done"
+            format="base64"
+            (done)="OnCaptureSignature($event)">
+        </ng-signature-pad>
+
+
+        <!-- <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad> -->
+
+    </mat-card>
+
+    <button mat-button class="check-in-btn" (click)="OnCheckIn(event,guest)">Check In</button>
+
+</div>

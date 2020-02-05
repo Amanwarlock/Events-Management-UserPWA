@@ -1,0 +1,15 @@
+<div class="dialog">
+    <mat-toolbar-row class="dialog-title">
+        <span>Launch Event</span>
+    </mat-toolbar-row>
+    <div mat-dialog-content class="dialog-content">
+        <mat-card-title><mat-icon class="menu-icon">event</mat-icon>&nbsp;&nbsp;{{data.name}}</mat-card-title>
+        <mat-card-subtitle><mat-icon class="schedule-icon">schedule</mat-icon>&nbsp; {{data.scheduledAt | date}}</mat-card-subtitle>
+        <mat-card-title>Do you want to launch this event ?</mat-card-title>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">No Thanks</button>
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial (click)="OnOk()">Launch</button>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+
+<mat-card matRipple [matRippleColor]="myColor" class="event-card" (click)="OnEventSelect(event)">
+    <mat-card-header>
+        <!-- <div mat-card-avatar class="event-card-image" [ngStyle] = "{'background-image': 'url(https://material.angular.io/assets/img/examples/shiba1.jpg)'}"></div> -->
+        <!-- <div mat-card-avatar class="event-card-image" [style.background-image]="getImageUrl(event) | ImgSecure | async"> -->
+        <div mat-card-avatar class="event-card-image">
+            <img  mat-card-avatar [attr.src]= "getImageUrl(event) | ImgSecure | async"/>
+        </div>
+        <mat-card-title>{{event.name}}</mat-card-title>
+        <mat-card-subtitle><mat-icon matPrefix>schedule</mat-icon> <span>{{event.scheduledAt | date}}</span></mat-card-subtitle>
+        <div class="event-info">
+            <mat-icon matBadge="{{event.totalGuests}}" matBadgeColor="primary">people</mat-icon>
+        </div>
+       <div class="select">
+        <mat-checkbox class="example-margin" [(ngModel)]="isSelected" *ngIf="isSelected"></mat-checkbox>
+       </div>
+    </mat-card-header>
+</mat-card>

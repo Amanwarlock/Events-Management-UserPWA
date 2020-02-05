@@ -25,9 +25,11 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -60,18 +62,22 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "user-app-pwa:build"
+            "browserTarget": "user-app-pwa:build",
+            "proxyConfig": "src/proxy.config.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "user-app-pwa:build:production"
+              "browserTarget": "user-app-pwa:build:production",
+              "proxyConfig": "src/proxy.config.json"
             }
           }
         },
@@ -90,9 +96,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +132,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "user-app-pwa"
 }

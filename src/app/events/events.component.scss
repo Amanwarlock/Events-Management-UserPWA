@@ -1,0 +1,37 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .main .section-1{
+    .search-tool-bar{
+      background: #18227c;
+      border: none;
+      .events-search-form{
+        width: 100%;
+        .search-full-width{
+          width: 55%;
+        }
+        .date-search{
+          width: 40%;
+          margin-left: 5%;
+          ::ng-deep mat-datepicker-toggle{
+            button{
+              color: #babdd2;
+            }
+          }
+        }
+      }
+      mat-icon{
+        color: #babdd2;
+      }
+    }
+  }
+
+ .main .section-2{
+  padding-right: 2%;
+  padding-left: 2%;
+ }

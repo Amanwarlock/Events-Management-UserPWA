@@ -1,0 +1,48 @@
+.main{
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    .event-info {
+        border-radius: 0;
+        border-left: solid 5px #524aac;
+        .event-header-image {
+            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+            background-size: cover;
+          }
+        .description {
+            font-size: 16px;
+        }
+    }
+
+    mat-accordion .banner-view{
+        border-radius: 0;
+        border-left: solid 5px #524aac;
+      }
+
+      table {
+        width: 100%;
+        box-shadow: none;
+      }
+      
+      .mat-form-field {
+        font-size: 14px;
+        width: 100%;
+      }
+      
+      td, th {
+        width: 25%;
+      }
+
+      ::ng-deep .table-search{
+          color: black;
+      }
+
+      ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+        background: black;
+      }
+      
+      ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label{
+        color: black;
+      }
+}
+

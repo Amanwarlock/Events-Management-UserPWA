@@ -1,0 +1,36 @@
+<div class="main">
+
+    <div class="section-1">
+        <mat-toolbar-row class="search-tool-bar">
+            <form class="events-search-form">
+              <mat-form-field class="search-full-width" color="accent">
+                  <button mat-button  matPrefix mat-icon-button>
+                    <mat-icon>search</mat-icon>
+                </button>
+                  <input matInput type="text" placeholder="Search events" [formControl]="mySearchControl">
+                  <button mat-button *ngIf="mySearchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="OnResetEventNameField()">
+                      <mat-icon>close</mat-icon>
+                  </button>
+              </mat-form-field>
+  
+              <mat-form-field class="date-search" color="primary">
+                <button mat-button *ngIf="dateSearchControl.value" matPrefix mat-icon-button aria-label="Clear" (click)="OnResetDateField()">
+                  <mat-icon color="primary">close</mat-icon>
+              </button>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="dateSearchControl">
+                <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker color="primary"></mat-datepicker>
+              </mat-form-field>
+  
+            </form>
+  
+          </mat-toolbar-row>
+    </div>
+
+    <div class="section-2">
+        <div class="events-list">
+            <app-event-item *ngFor="let event of eventList$ | async;let i = index" [event]='event'></app-event-item>
+          </div>
+    </div>
+
+</div>
