@@ -1,0 +1,4 @@
+- name: userpwa
+  cwd: /home/ubuntu/work/user-pwa
+  script: ng serve
+  watch: true

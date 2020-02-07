@@ -1,0 +1,4 @@
+- name: userpwa
+  cwd: /home/ubuntu/work/user-pwa/dist/user-app-pwa
+  script: http-server -c-1 --port 7000
+  watch: true
