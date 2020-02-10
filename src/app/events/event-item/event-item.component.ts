@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class EventItemComponent implements OnInit {
 
+  myColor: string;
+
   @Input() event;
 
   @Input() eventSelected = new EventEmitter();

@@ -71,6 +71,18 @@
     display: block;
     margin: 0 auto;
   }
+
+  @media (max-width: 1024px){
+    .login-content {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 300px) and (max-width: 700px){
+    .login-content {
+      width: 95%;
+    }
+  }
   
   .login-toolbar {
     justify-content: center;
@@ -114,4 +126,34 @@ button{
         left: 36%;
         position: relative;
     }
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+.login-main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.example-card {
+  width: 100%;
+  // max-width: 400px;
+
+    .login-logo{
+      display: flex;
+      justify-content: center;
+      min-height: 150px;
+      box-sizing: border-box;
+      mat-icon{
+        box-sizing: border-box;
+        font-size: 8em;
+        position: absolute;
+        top: 10%;
+        left: 39%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
 }

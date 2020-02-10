@@ -13,6 +13,8 @@ export interface DialogData {
 })
 export class ConfirmPwdDialogComponent implements OnInit {
 
+  hide:boolean = true;
+
   password = new FormControl('');
 
   constructor(

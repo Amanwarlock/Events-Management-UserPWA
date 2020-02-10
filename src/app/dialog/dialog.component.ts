@@ -3,6 +3,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 export interface DialogData {
   event: any;
+  name: string;
+  scheduledAt: string;
 }
 
 

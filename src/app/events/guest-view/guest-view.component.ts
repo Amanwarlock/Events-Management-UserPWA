@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap, NavigationExtras } from '@angular/router';
 import { EventsService } from '../events.service';
 import { Observable, of } from 'rxjs';
@@ -28,6 +28,8 @@ interface EventModel{
 export class GuestViewComponent implements OnInit {
 
   event$: Observable<EventModel>;
+
+  signature: {};
 
   signatureImage;
 
@@ -81,6 +83,12 @@ export class GuestViewComponent implements OnInit {
     this.signatureForm.append("uploadedFile", this.signatureImage);
   }
 
+  OnSign(data){
+    console.log("Base64 signature on blur up----",data);
+    let test : EventEmitter<any> = new EventEmitter();
+    test.emit("done");
+  }
+
   imageName(imgType){
     const date = new Date().valueOf();
     let text = '';
@@ -128,6 +136,7 @@ export class GuestViewComponent implements OnInit {
       });
     })
  }
+
 
 }
 

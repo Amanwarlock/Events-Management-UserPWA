@@ -33,7 +33,7 @@ export class EventsComponent implements OnInit {
 
   pageSize = 10;
   pageCount = 1;
-  sort = {createdBy: -1};
+  sort = {createdAt: -1};
 
   mySearchControl = new FormControl();
   dateSearchControl = new FormControl();
@@ -98,7 +98,7 @@ export class EventsComponent implements OnInit {
       query.scheduledAt = {[`$gte`]: startDate, [`$lte`]: endDate};
     }
     
-    return this.fetchEvents(query,this.sort,this.select,1,5);
+    return this.fetchEvents(query,this.select,this.sort,1,5);
     
   }
 

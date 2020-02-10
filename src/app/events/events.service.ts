@@ -30,6 +30,8 @@ export class EventsService {
 
     if(select && select.length) api += `&select=${select.join(",")}`;
 
+    if(sort && Object.keys(sort).length) api += `&sort=${JSON.stringify(sort)}`;
+
     api += `&page=${page}&count=${count}`;
 
     return this.http.get(api).pipe(tap((d:any)=>{

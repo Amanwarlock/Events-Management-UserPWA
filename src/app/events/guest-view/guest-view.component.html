@@ -11,20 +11,12 @@
     </mat-card>
 
     <mat-card class="guest-signature">
-        <!-- <ng-signature-pad
-            doneButtonText="Show Image"
-            format="base64"
-            (done)="showImage($event)">
-        </ng-signature-pad>
-        <img [src]="signatureImage" *ngIf="signatureImage" /> -->
         <mat-card-header><mat-card-subtitle>Sign Here</mat-card-subtitle> </mat-card-header>
         <ng-signature-pad
             doneButtonText="Done"
             format="base64"
-            (done)="OnCaptureSignature($event)">
+            (done)="OnCaptureSignature($event)" [height]="400">
         </ng-signature-pad>
-
-
         <!-- <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad> -->
 
     </mat-card>
